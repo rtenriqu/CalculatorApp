@@ -1,22 +1,32 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 
 namespace CalculatorApp
 {
     public class MathFormulas : IEnumerable<object[]>
     {
-        public bool IsEven(int number) => number % 2 == 0;
+        public bool IsEven(int number)
+        {
+            return number % 2 == 0;
+        }
 
-        public int Diff(int x, int y) => y - x;
+        public int Diff(int x, int y)
+        {
+            return y - x;
+        }
 
-        public int Add(int x, int y) => x + y;
+        public int Add(int x, int y)
+        {
+            return x + y;
+        }
 
         public int Sum(params int[] values)
         {
             int sum = 0;
-            foreach (var value in values)
+            foreach (int value in values)
+            {
                 sum += value;
+            }
 
             return sum;
         }
@@ -24,8 +34,10 @@ namespace CalculatorApp
         public double Average(params int[] values)
         {
             int sum = 0;
-            foreach (var value in values)
+            foreach (int value in values)
+            {
                 sum += value;
+            }
 
             return sum / values.Length;
         }
@@ -47,6 +59,9 @@ namespace CalculatorApp
             yield return new object[] { int.MinValue, -1, int.MaxValue };
         }
 
-        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
     }
 }

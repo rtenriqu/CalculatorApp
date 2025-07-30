@@ -1,5 +1,3 @@
-using System;
-using System.Reflection;
 using Xunit;
 
 namespace CalculatorApp.Test
@@ -14,8 +12,8 @@ namespace CalculatorApp.Test
             int x = 1;
             int y = 2;
 
-            var xResult = calculator.IsEven(x);
-            var yResult = calculator.IsEven(y);
+            bool xResult = calculator.IsEven(x);
+            bool yResult = calculator.IsEven(y);
 
             Assert.False(xResult);
             Assert.True(yResult);
@@ -27,7 +25,7 @@ namespace CalculatorApp.Test
         public void DiffTest(int x, int y, int expectedValue)
         {
             var calculator = new MathFormulas();
-            var result = calculator.Diff(x, y);
+            int result = calculator.Diff(x, y);
             Assert.Equal(expectedValue, result);
         }
 
@@ -37,17 +35,18 @@ namespace CalculatorApp.Test
         public void SumTest(int[] values, int expectedValue)
         {
             var calculator = new MathFormulas();
-            var result = calculator.Sum(values);
+            int result = calculator.Sum(values);
             Assert.Equal(expectedValue, result);
         }
 
-        [Theory(Skip = "All good.")]
+        //[Theory(Skip = "All good.")]
+        [Theory]
         [InlineData(2, 4, 6)]
         [InlineData(1, 4, 5)]
         public void AddTest(int x, int y, int expectedValue)
         {
             var calculator = new MathFormulas();
-            var result = calculator.Add(x, y);
+            int result = calculator.Add(x, y);
             Assert.Equal(expectedValue, result);
         }
 
@@ -57,7 +56,7 @@ namespace CalculatorApp.Test
         public void AverageTest(int[] values, int expectedValue)
         {
             var calculator = new MathFormulas();
-            var result = calculator.Average(values);
+            double result = calculator.Average(values);
             Assert.Equal(expectedValue, result);
         }
 
@@ -66,7 +65,7 @@ namespace CalculatorApp.Test
         public void Add_MemberData_Test(int x, int y, int expectedValue)
         {
             var calculator = new MathFormulas();
-            var result = calculator.Add(x, y);
+            int result = calculator.Add(x, y);
             Assert.Equal(expectedValue, result);
         }
 
@@ -75,7 +74,7 @@ namespace CalculatorApp.Test
         public void Add_ClassData_Test(int x, int y, int expectedValue)
         {
             var calculator = new MathFormulas();
-            var result = calculator.Add(x, y);
+            int result = calculator.Add(x, y);
             Assert.Equal(expectedValue, result);
         }
     }
