@@ -28,3 +28,5 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal /p:CollectCoverage=true
+    - name: Coverage Report
+      run: type D:\a\CalculatorApp\CalculatorApp\CalculatorApp.Test\coverage.json
